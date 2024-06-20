@@ -1,5 +1,6 @@
 package com.danech.s3;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -19,7 +20,7 @@ public class S3Service {
 		SpringApplication.run(SpringCloudAwsApplication.class, args);
 	}
 
-	public void read() throws Exception {
+	public void read() throws IOException  {
 		String fileData = StreamUtils.copyToString(resource.getInputStream(), StandardCharsets.UTF_8);
 		System.out.println(fileData);
 	}
